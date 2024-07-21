@@ -2,19 +2,25 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+const path = require('path');
 const Item = require('./models/Item');
 const User = require('./models/User');
 const Cart = require('./models/Cart');
+
+// Load environment variables
+dotenv.config();
 
 const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017/choco-fete', {
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => console.log('MongoDB connected'))
+  useUnifiedTopology: true,
+})
+  .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
 app.post('/api/register', async (req, res) => {
@@ -93,6 +99,13 @@ app.get('/api/cart', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Error fetching cart items' });
   }
+});
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
