@@ -1,0 +1,22 @@
+.register-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .register-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .register-page input {
+    margin: 10px;
+    padding: 10px;
+    width: 300px;
+  }
+  
+  .register-page button {
+    padding: 10px 20px;
+    margin-top: 20px;
+  }
+  
