@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './LoginPage.css';
+import '../styles/LoginPage.css';
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -9,7 +9,7 @@ const LoginPage = () => {
     password: ''
   });
 
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import './ItemPage.css';
+import '../styles/ItemPage.css';
 
 const ItemPage = () => {
   const { id } = useParams();

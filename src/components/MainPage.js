@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import './MainPage.css';
+import '../styles/MainPage.css';
 
 const MainPage = () => {
   const [darkMode, setDarkMode] = useState(false);
