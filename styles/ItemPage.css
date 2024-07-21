@@ -1,0 +1,31 @@
+.item-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .item-page img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .item-page h2 {
+    margin-bottom: 10px;
+  }
+  
+  .item-page p {
+    margin-bottom: 20px;
+    color: #888;
+  }
+  
+  .item-page input {
+    margin-right: 10px;
+    padding: 5px;
+    width: 50px;
+    text-align: center;
+  }
+  
+  .item-page button {
+    padding: 10px 20px;
+  }
+  
